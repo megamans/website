@@ -1,0 +1,111 @@
+/*
+    Document   : stylesheet.css
+    Created on : 2015-04-27 06:07 PM
+    Author     : dank
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+root {
+    display: block;
+}
+#header-image {
+    background-image: url("http://img.hdwallpaperpc.com/cover/52/Cartoon_Comic_Anime_Stretch_White_Bakemonogatari_Nisemonogatari_Nekomonogatari_Karen_Araragi_Fire_Sister_51924.jpg");
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center 60px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1000px;
+    height: 350px;
+    position: relative;
+    top: -100px;
+}
+#navbar {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:1000px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #7070FF;
+    top: -100px;
+    box-shadow: 3px 3px 5px #888888;
+}
+#navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#navbar-list li {
+    display: inline;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#navbar-list li a{
+    font-family: Helvetica;
+    color: white;
+}
+#navbar-list li a:hover{
+    font-family: Helvetica;
+    text-decoration: none;
+    color: grey;
+}
+#body {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 25px;
+    border: solid;
+    border-width: 1px;
+    width: 900px;
+    top: -60px;
+    padding-left: 50px;
+    padding-right: 60px;
+    padding-bottom: 25px;
+    padding-top: 5px;
+    box-shadow: 3px 3px 5px #888888;
+    font-family: Verdana;
+    line-height: 200%;
+    background-color: white;
+    /*-moz-border-radius: 0px;
+    -webkit-border-radius: 16px 16px 0px 0px;
+    border-radius: 16px 16px 0px 0px;*/
+}
+a {
+    text-decoration: none;
+}
+#body p{
+    font-family: Verdana;
+    text-indent: 50px;
+}
+/*#body h1{
+    font-family: Verdana;
+    text-align: center;
+    background-color: #8A9A9E;
+    width: 995px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-right: 15px;
+    margin-left:-50px;
+    margin-top: -5px;
+    color: white;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 15px 15px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+}*/
+#body h1{
+    font-family: Verdana;
+    text-align: center;
+    padding-right: 5px;
+}
+#body h1 a{
+    color: black;
+    /*color: white;*/
+}

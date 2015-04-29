@@ -1,0 +1,104 @@
+/*
+    Document   : doge2015.css
+    Created on : 2015-04-27 09:48 PM
+    Author     : dank
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+button {
+  font-family: cursive;
+  z-index:2;
+}
+#dogepic {
+  height:150px;
+  position:fixed;
+  left:45%;
+  top:50%;
+  overflow: hidden;
+  transition-duration: 0.8s;
+  transition-property: transform;
+}
+#dankfedora {
+  position:fixed;
+  left:46%;
+  top:47%;
+  transform: scaleX(-1);
+  visibility: hidden;
+}
+#dankerfedora {
+  height:50px;
+  position:fixed;
+  left:50%;
+  top:49%;
+  visibility: hidden;
+}
+#dankestfedora {
+  position:fixed;
+  height:100px;
+  left:39%;
+  top:43%;
+  visibility:hidden;
+}
+#dogecoinValue {
+  font-family: cursive;
+}
+#play {
+  position: fixed;
+  left:46%;
+  top:75%;
+}
+#snoopdoge {
+  position:fixed;
+  top:50%;
+  visibility: hidden;
+}
+#snoopdoge2 {
+  position:fixed;
+  left:65%;
+  top:50%;
+  visibility: hidden;
+}
+#rainbowtoad {
+  position:fixed;
+  height:300px;
+  z-index:-1;
+  visibility:hidden;
+}
+body {
+  background-size:cover;
+}
+#gloriousNippon {
+  position:fixed;
+  height:150px;
+  left:45%;
+  top:58%;
+  transform: scaleX(-1);
+  transform: rotate(250deg);
+  visibility:hidden;
+}
+#mtnDew {
+  position:fixed;
+  height: 150px;
+  left:53%;
+  top:23%;
+}
+#hungerDisplay {
+font-family:cursive
+}
+#background {
+  position:fixed;
+  top:-50px;
+  width:100%;
+  z-index:3;
+  visibility:hidden;
+}
+#euphoriapic {
+  position:fixed;
+  height:99%;
+  width: 99%;
+  top:-50px;
+  z-index:3;
+  visibility:hidden;
+}
