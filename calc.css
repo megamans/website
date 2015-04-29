@@ -33,3 +33,15 @@ body {
   cursor: pointer;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
+#back {
+    position: fixed;
+    height: 40px;
+    top:20px;
+    left: 20px;
+    -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}

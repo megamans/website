@@ -102,3 +102,15 @@ font-family:cursive
   z-index:3;
   visibility:hidden;
 }
+#back {
+    position: fixed;
+    height: 40px;
+    bottom: 20px;
+    left: 20px;
+    -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}

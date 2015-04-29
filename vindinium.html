@@ -1,0 +1,184 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Vindinium</title>
+    <link rel="stylesheet" type="text/css" href="stylez.css">
+</head>
+
+<body>
+    <div id="header-image">
+    </div>
+    <div id="navbar">
+        <ul id="navbar-list">
+            <li><a href="index.html">Home</a>
+            </li>
+            <li><a href="aboutme.html">About Me</a>
+            </li>
+            <li><a href="hardware.html">Hardware</a>
+            </li>
+            <li><a href="doge.html">Doge Game</a>
+            </li>
+            <li><a href="misc.html">Misc.</a>
+            </li>
+        </ul>
+    </div>
+    <div id="body">
+        <h1>Vindinium</h1>
+        <p>
+            Vindinium is a game where you can code an AI and pit them in a battle against other bots. The goal of the game is 
+            to get more gold than all the other bots. Your bot will gain gold each turn accordingly with how many mines you
+            have, for example if you have 3 mines every turn you'll get 3 more gold. People can take your mines, however. 
+            This is done either by simply going to a bots mine and taking it, or by killing the owner of the mine. If you 
+            are killed you will lose all your mines and the mines will go to the killer's ownership. Each bot has 100 health, 
+            attacking a mine will subtract 20 from that, and so will attacking another bot. Additionally, each turn you will 
+            lose one health. To heal yourself without dying you must go to a tavern. You can pay 2 gold at a tavern in order 
+            to be healed for 50 health. That's the gist of the game, it's not much since it was meant to train beginners in 
+            their AI making skills.
+        </p>
+        <div align="center">
+            <img src="http://stratosprovatopoulos.com/wp-content/uploads/2014/02/screenshot.png">
+        </div>
+    </div>
+    <div id="body">
+        <h1>My Bot</h1>
+        <p>
+            So for this project each student made their own bots using Javascript we put them up onto the vindinium servers
+            to fight. We had some tournaments and stuff, it was fun. My bot's code in particular looked like this:
+        </p>
+        <div class="code">
+            <span class="InlineComment">//This&nbsp;gives&nbsp;information&nbsp;on&nbsp;all&nbsp;the&nbsp;bots</span>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;bots&nbsp;=&nbsp;[bot.bot1,&nbsp;bot.bot2,&nbsp;bot.bot3,&nbsp;bot.bot4];
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bots.splice(bot.yourBot.id&nbsp;-&nbsp;1,&nbsp;1);
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="InlineComment">//This&nbsp;gives&nbsp;the&nbsp;location&nbsp;of&nbsp;all&nbsp;the&nbsp;mines&nbsp;owned&nbsp;by&nbsp;other&nbsp;players</span>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;enemyMines&nbsp;=&nbsp;[];
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">if</span>(bot.yourBot.id&nbsp;!=&nbsp;1)&nbsp;enemyMines&nbsp;=&nbsp;enemyMines.concat(bot.bot1mines);
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">if</span>(bot.yourBot.id&nbsp;!=&nbsp;2)&nbsp;enemyMines&nbsp;=&nbsp;enemyMines.concat(bot.bot2mines);
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">if</span>(bot.yourBot.id&nbsp;!=&nbsp;3)&nbsp;enemyMines&nbsp;=&nbsp;enemyMines.concat(bot.bot3mines);
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">if</span>(bot.yourBot.id&nbsp;!=&nbsp;4)&nbsp;enemyMines&nbsp;=&nbsp;enemyMines.concat(bot.bot4mines);
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="InlineComment">//myPos&nbsp;is&nbsp;a&nbsp;variable&nbsp;providing&nbsp;your&nbsp;own&nbsp;location</span>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;myPos&nbsp;=&nbsp;[bot.yourBot.pos.x,&nbsp;bot.yourBot.pos.y];
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="InlineComment">//All&nbsp;these&nbsp;find&nbsp;the&nbsp;nearest&nbsp;location&nbsp;of&nbsp;said&nbsp;object.&nbsp;nearTav&nbsp;finds&nbsp;the&nbsp;nearest&nbsp;tavern,&nbsp;nearMine&nbsp;<br>finds&nbsp;the&nbsp;nearest&nbsp;free&nbsp;mine,&nbsp;and&nbsp;everyMine&nbsp;finds&nbsp;the&nbsp;nearest&nbsp;owned&nbsp;mine&nbsp;except&nbsp;the&nbsp;ones&nbsp;owned&nbsp;by&nbsp;yourself.</span>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;nearTav&nbsp;=&nbsp;bot.taverns[0];
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">for</span>(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;bot.taverns.length;&nbsp;i++)&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">if</span>(bot.findDistance(myPos,&nbsp;nearTav)&nbsp;&gt;&nbsp;bot.findDistance(myPos,&nbsp;bot.taverns[i]))&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nearTav&nbsp;=&nbsp;bot.taverns[i];
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;nearMine&nbsp;=&nbsp;bot.freeMines[0];
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">for</span>(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;bot.freeMines.length;&nbsp;i++)&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">if</span>(bot.findDistance(myPos,&nbsp;nearMine)&nbsp;&gt;&nbsp;bot.findDistance(myPos,&nbsp;bot.freeMines[i]))&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nearMine&nbsp;=&nbsp;bot.freeMines[i];
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;everyMine&nbsp;=&nbsp;enemyMines[0];
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">for</span>(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;enemyMines.length;&nbsp;i++)&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">if</span>(bot.findDistance(myPos,&nbsp;everyMine)&nbsp;&gt;&nbsp;bot.findDistance(myPos,&nbsp;enemyMines[i]))&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;everyMine&nbsp;=&nbsp;enemyMines[i];
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="InlineComment">//var&nbsp;attack&nbsp;and&nbsp;target&nbsp;work&nbsp;together&nbsp;to&nbsp;help&nbsp;my&nbsp;bot&nbsp;know&nbsp;who&nbsp;to&nbsp;attack&nbsp;when</span>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="InlineComment">//attack&nbsp;tells&nbsp;the&nbsp;bot&nbsp;whether&nbsp;or&nbsp;not&nbsp;it&nbsp;should&nbsp;be&nbsp;attacking&nbsp;anyone&nbsp;to&nbsp;begin&nbsp;with</span>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="InlineComment">//target&nbsp;tells&nbsp;the&nbsp;bot&nbsp;who&nbsp;it&nbsp;should&nbsp;attack,&nbsp;and&nbsp;in&nbsp;this&nbsp;case&nbsp;it&nbsp;targets&nbsp;the&nbsp;bot&nbsp;who&nbsp;has&nbsp;the&nbsp;most&nbsp;<br>mines&nbsp;besides&nbsp;yourself</span>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;attack&nbsp;=&nbsp;
+            <span class="Keyword">false</span>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;target&nbsp;=&nbsp;0
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">if</span>(bots[0].mineCount&nbsp;&gt;&nbsp;bots[1].mineCount&nbsp;&amp;&amp;&nbsp;bots[0].mineCount&nbsp;&gt;&nbsp;bots[2].mineCount)&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target&nbsp;=&nbsp;0;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attack&nbsp;=&nbsp;
+            <span class="Keyword">true</span>;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+            <span class="Statement">else</span>&nbsp;<span class="Statement">if</span>(bots[1].mineCount&nbsp;&gt;&nbsp;bots[2].mineCount&nbsp;&amp;&amp;&nbsp;bots[1].mineCount&nbsp;&gt;&nbsp;bots[0].mineCount)&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target&nbsp;=&nbsp;1;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attack&nbsp;=&nbsp;
+            <span class="Keyword">true</span>;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+            <span class="Statement">else</span>&nbsp;<span class="Statement">if</span>(bots[2].mineCount&nbsp;&gt;&nbsp;bots[1].mineCount&nbsp;&amp;&amp;&nbsp;bots[2].mineCount&nbsp;&gt;&nbsp;bots[0].mineCount)&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target&nbsp;=&nbsp;2;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attack&nbsp;=&nbsp;
+            <span class="Keyword">true</span>;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+            <span class="Statement">else</span>&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target&nbsp;=&nbsp;0;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attack&nbsp;=&nbsp;
+            <span class="Keyword">false</span>;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="InlineComment">//if&nbsp;else&nbsp;statement&nbsp;to&nbsp;tell&nbsp;the&nbsp;bot&nbsp;what&nbsp;to&nbsp;do&nbsp;and&nbsp;when</span>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="Statement">if</span>(bot.yourBot.life&nbsp;&lt;=&nbsp;52)&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bot.goDir&nbsp;=&nbsp;bot.findPath(myPos,&nbsp;nearTav);
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+            <span class="Statement">else</span>&nbsp;<span class="Statement">if</span>(bot.yourBot.life&nbsp;&gt;&nbsp;52&nbsp;&amp;&amp;&nbsp;bot.freeMines.length&nbsp;&gt;&nbsp;0)&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bot.goDir&nbsp;=&nbsp;bot.findPath(myPos,&nbsp;nearMine);
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+            <span class="Statement">else</span>&nbsp;<span class="Statement">if</span>(bots[target].life&nbsp;+&nbsp;20&nbsp;&lt;&nbsp;bot.yourBot.life&nbsp;&amp;&amp;&nbsp;bots[target].mineCount&nbsp;&gt;&nbsp;1&nbsp;&amp;&amp;&nbsp;
+            <br>attack&nbsp;===&nbsp;<span class="Keyword">true</span>)&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bot.goDir&nbsp;=&nbsp;bot.findPath(myPos,&nbsp;[bots[target].pos.x,&nbsp;bots[target].pos.y])
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+            <span class="Statement">else</span>&nbsp;{
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bot.goDir&nbsp;=&nbsp;bot.findPath(myPos,&nbsp;everyMine);
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+        </div>
+        <p>
+            You can look at the comments, which are the lines in green and have // in front of them, to see what each section
+            of the code does. However, I do have a more in depth explanation for what exactly my bot does. 
+        </p>
+        <p>
+            My bot first checks its own life to see whether or not it needs to go to a tavern to heal up. The life I set it to go to a tavern is 
+            below or equal to 52. This is done by having a for loop that takes an array of all the taverns, and uses an if
+            statement to change the value of the variable nearTav to whatever the coordinates of the closest tavern is. It
+            then goes through an if/else statement which first checks for a condition where bot.yourBot.life is less than
+            or equal to 52, and if that is true then it takes the coordinates from the for loop and goes there using
+            bot.findPath. After that when it makes sure its life is not in danger, it goes towards the nearest free mine 
+            to take for itself. This is done similarlly to the tavern function, except in the for loop it takes in an array 
+            of all the free mines rather than the taverns. Then in the same if/else statement, an else if is added where the 
+            condition is that bot.yourBot.life is more than 52 and bot.freeMines.length more than 0, and if that is true then
+            the bot will go towards the nearest free mine. What bot.freeMines.length more than 0 does in the conditions is 
+            that if there are no more free mines, the bot won't look for a free mine. Then it looks for someone to attack and
+            steal their mines. In this case, my bot is looking for the person who has more mines than everybody else, and
+            then my bot will attempt to attack them and take their mines. It does that by first going through an if/else
+            statement where it uses inequalities to check who has more mines that others, then changing a variable,
+            ""target,"" to the coordinates of said bot that has more mines than others. Another variable is also added,
+            ""attack,"" which is a boolean. If the person who has the most mines only has one mine, attack will equal to
+            false, as it is not worth going after that person if it is only for one mine. Also if two people are tied for
+            most mines, attack will equal to false as well. To do this my if/else statement which tells my bot what 
+            direction it should go adds another else if condition where if bot[target].life + 20 is less than bot.yourBot.life
+            and attack = true, then it will find the path to the bot with the most mines. Finally, if there is nothing else
+            to do my bot will then just go towards the nearest taken mine and attempt to take control of it. It does this 
+            using a very similar for loop to the free mines one, except for taken mines, and simply just finds the path to 
+            the nearest taken mine if none of the other conditions are met, so if my health is not critical, there are no
+            free mines to take, and there isn't a good opportunity to kill another bot for their mines, I will instead
+            just work on stealing the opponents' mines.	
+        </p>
+    </div>
+</body>
+
+</html>

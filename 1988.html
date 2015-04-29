@@ -1,0 +1,55 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="1988.css">
+    <title>1988</title>
+</head>
+
+<body onload="intro()">
+    <script type="text/javascript">
+        function intro() {
+            window.open('https://www.google.com/?safe=active&ssui=on', '1423260929460', 'width=500,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');
+        }
+    </script>
+    <div id="keypad">
+        <table id="userInputs">
+            <tr>
+                <td>
+                    <input type='text' id='userInput1' maxlength='1' value='1' />
+                    <input type='text' id='userInput2' maxlength='1' value='9' />
+                    <input type='text' id='userInput3' maxlength='1' value='8' />
+                    <input type='text' id='userInput4' maxlength='1' value='8' />
+                </td>
+            </tr>
+        </table>
+        <table id="buttonCheck">
+            <tr>
+                <td>
+                    <button id="button" onclick="check1()"></button>
+                </td>
+            </tr>
+        </table>
+        <table id="answer">
+            <tr>
+                <td>
+                    <p id="inputAnswer"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <a id="journal2" onclick="return journal('1988diary.html')">
+        <img id="journalimg" src="http://www.clker.com/cliparts/a/3/l/S/v/h/diary-notebook-md.png">
+    </a>
+    <a id="caseNotes2" onclick="return caseNotes('https://www.google.com/?safe=active&ssui=on')">
+        <img id="casenotesimg" src="http://www.clker.com/cliparts/Q/g/7/H/e/b/grey-travel-suitcase-md.png">
+    </a>
+    <a href="misc.html"><img src="http://www.clker.com/cliparts/r/9/X/0/t/i/arrow-vector-md.png" id="back"></a>
+    <script type='text/javascript' src='1988.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+#element1 {
+    position:fixed;
+    left:3%;
+    top:10px;
+    
+}
+#element2 {
+    position:fixed;
+    left:94%;
+    top:10px;
+    
+}
+
+#mainPage{
+    position:absolute;
+    height:600px;
+    left:30%;
+}
+
+#picture{
+  width:80%;
+  position: absolute;
+  left: 10%;
+}
+
+#page1{
+  position:absolute;
+  left:0px;
+  top:300px;
+  width: 700px;
+  font-style:oblique;
+  font-family:serif;
+  font-size:25px;
+  font-weight:bold;
+}

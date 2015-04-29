@@ -1,0 +1,135 @@
+/*
+    Document   : 1988.css
+    Created on : 2015-04-29 05:15 PM
+    Author     : dank
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+ body {
+    background-color: black;
+}
+#keypad {
+    margin-left:auto;
+    margin-right:auto;
+    width:575px;
+    height:300px;
+    background-image:url("http://www.texturex.com/cache/Metal-Textures/galvanized%20metal%20texture%20steel%20plate%20high%20resolution%20wallpaper_800.jpg");
+    background-position:center;
+    border-radius:25px;
+}
+#journalimg {
+    float:right;
+    transform: scaleX(-1);
+    margin-top:-100px;
+    margin-right:20px;
+    height:200px;
+    cursor:pointer;
+}
+#casenotesimg {
+    float:left;
+    transform: scaleX(-1);
+    margin-top:-100px;
+    margin-left:20px;
+    height:200px;
+    cursor:pointer;
+}
+#userInputs {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:150px;
+    padding-top:40px;
+}
+#buttonCheck {
+    margin-left:auto;
+    margin-right:auto;
+}
+#userInput1 {
+    display:inline-block;
+    width:120px;
+    height:120px;
+    font-size:90px;
+    text-align:center;
+    border-radius:1px;
+    font-family:Georgia;
+    background: linear-gradient(gray, white, white, white, white, white, white, white, white, gray);
+}
+#userInput2 {
+    display:inline-block;
+    width:120px;
+    height:120px;
+    font-size:90px;
+    text-align:center;
+    border-radius:1px;
+    font-family:Georgia;
+    background: linear-gradient(gray, white, white, white, white, white, white, white, white, gray);
+}
+#userInput3 {
+    display:inline-block;
+    width:120px;
+    height:120px;
+    font-size:90px;
+    text-align:center;
+    border-radius:1px;
+    font-family:Georgia;
+    background: linear-gradient(gray, white, white, white, white, white, white, white, white, gray);
+}
+#userInput4 {
+    display:inline-block;
+    width:120px;
+    height:120px;
+    font-size:90px;
+    text-align:center;
+    border-radius:1px;
+    font-family:Georgia;
+    background: linear-gradient(gray, white, white, white, white, white, white, white, white, gray);
+}
+td {
+    margin-left:50%;
+    margin-right:50%;
+}
+#button {
+    width:508px;
+    height:75px;
+    background: #17405c;
+    background-image: linear-gradient(to bottom, #17405c, #0a1e2b);
+    border-radius: 3px;
+    box-shadow: 0 2px 3px #666666;
+    border:1px solid gray;
+    cursor:pointer;
+}
+#button:active {
+    width:508px;
+    height:75px;
+    background: #17405c;
+    background-image: linear-gradient(to bottom, #17405c, #0a1e2b);
+    border-radius: 3px;
+    box-shadow: 0 2px 3px #666666;
+    border:2px solid gray;
+}
+button:focus {
+    outline:0
+}
+#inputAnswer {
+    font-size:25px;
+    color:white;
+    font-family:Georgia;
+    font-style:italic;
+}
+#answer {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:-25px;
+}
+#back {
+    position: fixed;
+    height: 40px;
+    top:20px;
+    left: 20px;
+    -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}

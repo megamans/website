@@ -3,8 +3,9 @@ body {
     font-family: Lucida Console;
 }
 #table1 {
-    margin-left:520px;
-    margin-top:300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:25%;
     background-color:white;
     table-layout:fixed;
     border: 1px solid blue;
@@ -18,18 +19,30 @@ td {
     text-align:center;
 }
 #CityName{
-    width:70px;
+    width:80px;
     height:50px;
 }
 #Adjective{
-    width:70px;
+    width:80px;
     height:50px;
 }
 #Noun{
-    width:75px;
+    width:85px;
     height:50px;
 }
 #Activation {
     position: relative;
-    left: 580px;
+    left: 44%;
+}
+#back {
+    position: fixed;
+    height: 40px;
+    top:20px;
+    left: 20px;
+    -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
 }
