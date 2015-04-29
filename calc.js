@@ -33,7 +33,7 @@ if  (document.getElementById("DropdownMenu1").value == "+"){
     var answer = parseInt(num1) * parseInt(num2);
 
     document.getElementById('Answer').innerHTML = answer;
-    } else if (document.getElementById("DropdownMenu1").value == "division"){
+    } else if (document.getElementById("DropdownMenu1").value == "ÃƒÂ·"){
   
     var num1 = document.getElementById('Number1').value;
 
